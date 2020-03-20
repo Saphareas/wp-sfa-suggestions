@@ -40,5 +40,13 @@ function sfa_suggestion_init() {
 	register_post_type('sfa_suggestion', $p_args);
 }
 
+function sfa_display_grid() {
+	$path_to_grid = WP_PLUGIN_DIR . '/' . basename(dirname(__FILE__)) .'/grid-view.php';
+	ob_start();
+	include $path_to_grid;
+	return apply_filters('sfa_grid_shortcode', ob_get_clean());
+}
+add_shortcode('sfa-suggestion-grid', 'sfa_display_grid');
+
 add_action('init', 'sfa_suggestion_init');
 //add_shortcode('sfa_suggestion_form', array($this, 'sfa_form_shortcode'));
