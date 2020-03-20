@@ -40,5 +40,12 @@ function sfa_suggestion_init() {
 	register_post_type('sfa_suggestion', $p_args);
 }
 
+function sfa_display_form() {
+	$path_to_form = WP_PLUGIN_DIR . '/' . basename(dirname(__FILE__)) .'/submission-form.php';
+	ob_start();
+	include $path_to_form;
+	return apply_filters('sfa_form_shortcode', ob_get_clean());
+}
+add_shortcode('sfa-suggestion-form', 'sfa_display_form');
+
 add_action('init', 'sfa_suggestion_init');
-//add_shortcode('sfa_suggestion_form', array($this, 'sfa_form_shortcode'));

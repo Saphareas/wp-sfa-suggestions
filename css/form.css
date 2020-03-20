@@ -1,0 +1,79 @@
+#sfa-suggestion-form {
+    max-width: 50vh;
+    margin: 0 auto;
+    text-align: center;
+    padding: 16px;
+    display: grid;
+    grid-template-columns: 10% 1fr 10%;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 22px;
+}
+#sfa-suggestion-form form {
+    grid-column: 2;
+}
+#sfa-suggestion-form .field {
+    display: none;
+}
+#sfa-suggestion-form .active {
+    display: block !important;
+}
+#sfa-suggestion-form input[type='text'], #sfa-suggestion-form textarea {
+    width: 80%;
+    font-size: 22px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 3px solid black;
+    margin-top: 5px;
+}
+#sfa-suggestion-form input:focus, #sfa-suggestion-form textarea:focus {
+    outline: none;
+}
+#sfa-suggestion-form span.error {
+    display: none;
+    font-size: 0.75em;
+    color: red;
+}
+#sfa-suggestion-form span.error.show {
+    display: unset;
+}
+#sfa-suggestion-form .prev, #sfa-suggestion-form .next {
+    cursor: pointer;
+    width: auto;
+    font-size: 3rem;
+    color: black;
+    font-weight: bold;
+    transition: 0.6s ease;
+    user-select: none;
+    grid-row: 1;
+    display: none;
+    background: none;
+    border: none;
+}
+#sfa-suggestion-form .prev {
+    grid-column: 1;
+}
+#sfa-suggestion-form .next {
+    grid-column: 3;
+}
+#sfa-suggestion-form .prev:hover, #sfa-suggestion-form .next:hover {
+    color: #e86428;
+}
+#sfa-suggestion-form .prev:disabled, #sfa-suggestion-form .next:disabled {
+    color: grey !important;
+}
+#sfa-suggestion-form .button {
+    background-color: #e86428;
+    border: none;
+    color: black;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+    font-size: 22px;
+}
+#sfa-suggestion-form .button.pill {
+    border-radius: 12px;
+}
